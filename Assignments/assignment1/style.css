@@ -116,6 +116,10 @@ header ul li a:hover {
   color: var(--text-muted);
 }
 
+.three-line {
+  display: none;
+}
+
 /* serach-box section */
 .search-wrapper {
   width: 30%;
@@ -244,11 +248,14 @@ footer .bottom {
 
 .product-card {
   flex-shrink: 0;
-  width: 25%;
-  height: 500px;
+  width: clamp(250px, 25vw, 350px);
+  height: clamp(400px, 80vh, 500px);
   background-color: #222325;
   border: 1px solid gray;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .product-card:hover {
@@ -269,8 +276,11 @@ footer .bottom {
 }
 
 .product-card-desc {
-  height: 40%;
+  flex: 2;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-desc-wrapper {
@@ -283,13 +293,15 @@ footer .bottom {
 
 .product-desc .title {
   font-size: 1.1rem;
-  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .product-desc .desc {
-  height: 50px;
   font-size: 0.8rem;
   margin-block: 10px;
   color: lightgray;
+  height: 40px;
+  text-overflow: ellipsis;
 }
 
 .product-price .price {
