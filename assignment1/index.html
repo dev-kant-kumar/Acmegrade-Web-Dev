@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Card</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <p>Dev</p>
+        </div>
+        <div class="search-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="none" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m20 20l-4.05-4.05m0 0a7 7 0 1 0-9.9-9.9a7 7 0 0 0 9.9 9.9" />
+            </svg>
+            <input type="search" placeholder="Search products , brands...." />
+        </div>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <div class="nav-btn">
+            <button class="button-primary-2">Login</button>
+            <button class="button-primary">Get Started</button>
+        </div>
+    </header>
+    <main>
+        <div class="products-sec">
+            <section class="products-sec-head">
+                <h2>Popular products</h2>
+                <p>Highly rated products</p>
+            </section>
+            <section class="products-sec-main" id="products-container">
+                <!-- Product cards will be populated here -->
+            </section>
+        </div>
+        </section>
+        </div>
+    </main>
+    <footer>
+        <div class="top">
+            <section class="footer-sec-a">
+                <div class="footer-logo">Dev</div>
+                <div class="footer-logo-desc">
+                    Full-Stack Web Developer crafting seamless digital experiences.
+                </div>
+
+                <div class="social-links">
+                    <a href=""><img src="./assets/github.svg" alt="" /></a>
+                    <a href=""><img src="./assets/linkedin.svg" alt="" /></a>
+                    <a href=""><img src="./assets/x.svg" alt="" /></a>
+                    <a href=""><img src="./assets/youtube.svg" alt="" /></a>
+                    <!-- <a href=""><img src="" alt="" /></a> -->
+                </div>
+            </section>
+            <section class="footer-sec-b">
+                <p>Quick Links</p>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </section>
+        </div>
+        <div class="bottom">
+            <p>
+                © <span id="footer-year"></span> <a id="copywrite">Dev Kant Kumar</a>.
+                All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

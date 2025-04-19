@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML</title>
+    <style>
+      @property --angle {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+      }
+
+      body {
+        height: 100vh;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(23, 22, 22);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      form {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: white;
+        background-color: rgb(23, 22, 22);
+        border-radius: 20px;
+        padding: 20px;
+        position: relative;
+      }
+
+      form::before,
+      s form::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: -10px;
+        border-radius: 20px;
+        background: conic-gradient(from var(--angle), green, lightgreen);
+        animation: border-animation 3s linear infinite;
+      }
+
+      form::after {
+        filter: blur(1.5rem);
+        opacity: 80%;
+      }
+
+      @keyframes border-animation {
+        from {
+          --angle: 0deg;
+        }
+        to {
+          --angle: 360deg;
+        }
+      }
+
+      form h2 {
+        text-align: center;
+        background: linear-gradient(30deg, green, white);
+        color: transparent;
+        background-clip: text;
+        font-size: 2rem;
+        margin-block: 10px;
+      }
+      input,
+      select {
+        background-color: transparent;
+        color: white;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        border-top: 1px solid transparent;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        border-block-end: 3px solid black;
+        transition: 0.2s linear;
+      }
+      input:hover {
+        border-top: 1px solid green;
+        border-left: 1px solid green;
+        border-right: 1px solid green;
+        border-block-end: 3px solid green;
+      }
+      button {
+        color: white;
+        background-color: green;
+        padding: 10px 20px;
+        margin-block-start: 20px;
+        border: none;
+        border-radius: 8px;
+        opacity: 0.9;
+        transition: 0.2s linear;
+        cursor: pointer;
+      }
+      button:hover {
+        opacity: 1;
+      }
+
+      input[type="date"],
+      select {
+        color: gray;
+      }
+
+      .terms-container {
+        display: flex;
+        gap: 10px;
+        color: gray;
+      }
+
+      .terms-container a {
+        text-decoration: none;
+        background: linear-gradient(10deg, green, white);
+
+        color: transparent;
+        background-clip: text;
+      }
+
+      .terms-container a:hover {
+        transform: translateX(10px);
+      }
+
+      input[type="checkbox"] {
+        accent-color: green;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <h2>Register</h2>
+      <input type="text" placeholder="Name" name="name" />
+      <input type="email" placeholder="Email" name="email" />
+      <input type="password" placeholder="Password" name="password" />
+      <select name="gender" id="gender">
+        <option value="">Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <input type="date" name="dob" />
+
+      <label for="terms" class="terms-container">
+        <input type="checkbox" id="terms" />
+        <p>I agree to <a href="">terms and conditions.</a></p>
+      </label>
+      <button>Submit</button>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = form.querySelector('input[name="name"]').value;
+        const email = form.querySelector('input[name="email"]').value;
+        const password = form.querySelector('input[name="password"]').value;
+        const gender = form.querySelector('select[name="gender"]').value;
+        const dob = form.querySelector('input[name="dob"]').value;
+        const termsAccepted = form.querySelector(
+          'input[type="checkbox"]'
+        ).checked;
+
+        console.log(name, email, password, gender, dob, termsAccepted);
+        alert(`welcome ${name}`);
+      });
+    </script>
+  </body>
+</html>
