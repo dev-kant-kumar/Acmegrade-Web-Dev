@@ -63,6 +63,7 @@ body {
   border-radius: 0.5rem;
   box-shadow: var(--shadow-soft);
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .button-primary:hover,
