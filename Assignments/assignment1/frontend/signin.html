@@ -9,26 +9,39 @@
     <link rel="shortcut icon" href="./assets/code.png" type="image/x-icon" />
   </head>
   <body>
-    <main
-      style="
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-      "
-    >
-      <img src="./assets/illustrations/under-dev.svg" alt="" />
-      <p>
-        <span style="color: #646cff; font-weight: 600">Under</span> Developemnt
-      </p>
-      <button
-        class="button-primary"
-        onclick="window.location.href = 'index.html'"
-      >
-        Go to Home
-      </button>
+    <main>
+      <div class="form-wrapper">
+        <form action="">
+          <section class="form-head">
+            <h1>Welcome Back</h1>
+            <h2>Your portal to all features — log in now</h2>
+          </section>
+          <section class="form-body">
+            <div class="input-field">
+              <p class="input-label">Email</p>
+              <input type="email" name="email" />
+              <p class="error-box">Email is required</p>
+            </div>
+
+            <div class="input-field">
+              <p class="input-label">Password</p>
+              <input type="password" name="password" />
+              <p class="error-box">Password is required</p>
+            </div>
+
+            <input type="submit" value="Log in" class="submit-btn" />
+
+            <p class="form-switcher">
+              Don't have an account? <a href="signup.html"> Register</a>
+            </p>
+          </section>
+        </form>
+        <button class="home-btn" onclick="window.location.href='index.html'">
+          Back to Home
+        </button>
+      </div>
     </main>
+
+    <script src="signup.js"></script>
   </body>
 </html>
