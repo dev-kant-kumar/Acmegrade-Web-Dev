@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="resonsiveness.css" />
+    <link rel="shortcut icon" href="./assets/code.png" type="image/x-icon" />
+  </head>
+  <body>
+    <main>
+      <div class="form-wrapper">
+        <form action="">
+          <section class="form-head">
+            <h1>Get Started for Free</h1>
+            <h2>Unlock all features with your free account.</h2>
+          </section>
+          <section class="form-body">
+            <div class="input-field">
+              <p class="input-label">Full Name</p>
+              <input type="text" name="name" />
+              <p class="error-box">Name is required</p>
+            </div>
+
+            <div class="input-field">
+              <p class="input-label">Email</p>
+              <input type="email" name="email" />
+              <p class="error-box">Email is required</p>
+            </div>
+
+            <div class="input-field">
+              <p class="input-label">Password</p>
+              <input type="password" name="password" />
+              <p class="error-box">Password is required</p>
+            </div>
+
+            <div class="input-field">
+              <p class="input-label">Confirm Password</p>
+              <input type="password" name="cpassword" />
+              <p class="error-box">Confirm Password is required</p>
+            </div>
+
+            <input type="submit" value="Submit" class="submit-btn" />
+            <p class="terms">
+              By creating an account, you agree to our
+              <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>
+            </p>
+
+            <p class="form-switcher">
+              Already have an account? <a href="signin.html">Login</a>
+            </p>
+          </section>
+        </form>
+        <button class="home-btn" onclick="window.location.href='index.html'">
+          Back to Home
+        </button>
+      </div>
+    </main>
+
+    <script src="signup.js"></script>
+  </body>
+</html>
