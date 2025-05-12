@@ -380,11 +380,9 @@ form {
   color: lightgray;
 }
 
-.form-body {
-}
-
 .input-field {
-  margin-block: 10px;
+  margin-block: 20px;
+  position: relative;
 }
 
 .input-field-wrapper {
@@ -393,6 +391,11 @@ form {
   border-radius: 8px;
   width: 100%;
   height: 40px;
+  transition: 0.2s linear;
+}
+
+.input-field-wrapper:hover {
+  border-color: var(--btn-primary-hover);
 }
 .input-field-wrapper .icon-wrapper {
   width: 8%;
@@ -418,22 +421,23 @@ form {
   font-size: 1rem;
   transition: 0.2s linear;
 }
-.input-field input:focus-within {
-  border-color: var(--btn-primary-bg);
-}
 
 .input-field .input-label {
   width: fit-content;
   color: lightgray;
   margin-inline-start: 10%;
-  transform: translateY(28px);
+  /* transform: translateY(28px); */
   font-size: 0.8rem;
   pointer-events: none;
   transition: 0.2s linear;
+  position: absolute;
+  top: 12px;
+  display: none;
 }
 
 .input-field:focus-within .input-label {
-  transform: translateY(2.1px);
+  /* transform: translateY(2.1px); */
+  top: -10px;
   background-color: var(--bg-main);
   padding-inline: 5px;
 }
