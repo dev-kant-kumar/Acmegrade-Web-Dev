@@ -131,22 +131,6 @@ button {
 
 /* pop-up */
 
-.pop-up-container {
-  border: 2px solid #334089;
-  border-radius: 10px;
-  background-color: #121627;
-  position: fixed;
-  inset: 150px;
-  z-index: 1010;
-  padding: 20px;
-  width: 40%;
-  height: fit-content;
-  margin-inline: auto;
-  display: none;
-  box-shadow: 0px 0px 25px black;
-}
-
-/* Hidden by default */
 .overlay {
   position: fixed;
   top: 0;
@@ -164,6 +148,18 @@ button {
 /* Show overlay */
 .overlay.active {
   display: flex;
+}
+.pop-up-container {
+  background-color: #121627;
+  border: 2px solid #334089;
+  border-radius: 10px;
+  padding: 20px;
+  width: 40%;
+  max-width: 500px;
+  height: fit-content;
+  box-shadow: 0px 0px 25px black;
+  display: none;
+  z-index: 1010;
 }
 
 .close-btn-container {
