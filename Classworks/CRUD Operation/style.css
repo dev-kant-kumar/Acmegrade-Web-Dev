@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  user-select: none;
+}
+body {
+  background-color: #0d101d;
+  color: white;
+}
+
+/* cards-overview-conatiner */
+
+.cards-overview-conatiner {
+  background-color: #0d101d;
+  border-radius: 10px;
+  padding-inline: 30px;
+  padding-block: 20px;
+  margin-block: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+}
+.cardsOverviewContainer.scrolled {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cards-overview-conatiner button {
+  padding: 10px;
+  border: 1px solid #98b0ff;
+  border-radius: 10px;
+  color: rgb(208, 203, 203);
+  background: linear-gradient(#293579, #0c173a);
+  text-align: center;
+}
+.cards-overview-conatiner button:hover {
+  background: linear-gradient(#0c173a, #293579);
+  box-shadow: 0px 0px 5px white;
+}
+.container {
+  border: 1px solid #5f606a;
+  border-radius: 10px;
+  margin-inline: 30px;
+  margin-block: 20px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  overflow-x: scroll;
+}
+.container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.card {
+  flex-shrink: 0;
+  border: 2px solid #334089;
+  border-radius: 10px;
+  padding: 20px;
+  background: linear-gradient(200deg, #293579, black);
+  transition: 0.2s linear;
+}
+.card:hover {
+  transform: scale(1.01);
+  background: linear-gradient(270deg, #293579, black);
+}
+.card-body {
+  display: flex;
+  position: relative;
+}
+.left-sec {
+  width: 50%;
+}
+.right-sec {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
+.right-sec p {
+  color: white;
+  font-size: clamp(3rem, 5vw + 2rem, 9rem);
+  font-weight: 900;
+}
+
+.name {
+  font-size: clamp(16px, 2vw + 1rem, 30px);
+  color: #d7e1ff;
+  height: 200px;
+  text-overflow: ellipsis;
+}
+.lead {
+  font-size: clamp(14px, 1.5vw + 0.5rem, 20px);
+  color: #b2b3bd;
+  line-height: 30px;
+}
+.collection {
+  font-size: clamp(14px, 1vw + 0.5rem, 17px);
+  font-weight: 700;
+  color: #98b0ff;
+}
+
+.btn-container {
+  margin-block: 10px;
+}
+button {
+  padding: 6px 10px;
+  background-color: transparent;
+  border: 1px solid #b2b3bd;
+  border-radius: 8px;
+  color: #b2b3bd;
+  transition: 0.2s linear;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.del-btn:hover {
+  background-color: red;
+  color: white;
+  border-color: rgb(189, 3, 3);
+}
+.edit-btn:hover {
+  background-color: green;
+  color: white;
+  border-color: rgb(3, 64, 3);
+}
+
+/* pop-up */
+
+.pop-up-container {
+  border: 2px solid #334089;
+  border-radius: 10px;
+  background-color: #121627;
+  position: fixed;
+  inset: 150px;
+  z-index: 1010;
+  padding: 20px;
+  width: 40%;
+  height: fit-content;
+  margin-inline: auto;
+  display: none;
+  box-shadow: 0px 0px 25px black;
+}
+
+/* Hidden by default */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* Show overlay */
+.overlay.active {
+  display: flex;
+}
+
+.close-btn-container {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.close-btn-container svg {
+  cursor: pointer;
+}
+
+.edit-form {
+  padding: 10px 20px;
+}
+.edit-form h2 {
+  text-align: center;
+  margin-block-end: 20px;
+}
+
+.edit-form .form-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form .form-body .input-field {
+  border: 1px solid #485ab9;
+  border-radius: 8px;
+  margin-block-end: 15px;
+  display: flex;
+}
+
+.edit-form .form-body .input-field:hover {
+  box-shadow: 0px 0px 10px #485ab9;
+}
+
+.edit-form .input-field .icon {
+  background: linear-gradient(#0d101d, #293579);
+  border-inline-end: 1px solid #485ab9;
+  border-radius: 8px;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-form .form-body input {
+  width: 90%;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+.edit-from-error {
+  color: rgb(190, 5, 5);
+  display: none;
+}
+.pop-up-btn-container {
+  margin-block-start: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.pop-up-btn-container button {
+  width: 50%;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.pop-up-btn-container button:hover {
+  background: linear-gradient(#0d101d, #293579);
+  color: #d7e1ff;
+}
+
+/* add-new-movie-btn */
+
+.add-new-movie-btn {
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  color: white;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  height: 70px;
+  width: 70px;
+  border: 2px solid whitesmoke;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-new-movie-btn:hover {
+  background: linear-gradient(270deg, #4b6cb7 0%, #182848 100%);
+  transform: scale(1.1);
+  box-shadow: 0px 0px 50px white;
+}
+
+/* ======= Responsive Styles ======= */
+
+/* Medium Screens (Tablets & small laptops) */
+@media (max-width: 1024px) {
+  .cards-overview-conatiner,
+  .container {
+    grid-template-columns: 1fr 1fr;
+    padding-inline: 20px;
+  }
+
+  .pop-up-container {
+    inset: 100px;
+    width: 70%;
+  }
+}
+
+/* Small Screens (Mobiles) */
+@media (max-width: 768px) {
+  .cards-overview-conatiner,
+  .container {
+    grid-template-columns: 1fr;
+    padding-inline: 15px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .name {
+    font-size: clamp(14px, 4vw, 22px);
+    height: auto;
+  }
+
+  .lead {
+    font-size: clamp(12px, 3vw, 16px);
+    line-height: 1.4;
+  }
+
+  .collection {
+    font-size: clamp(12px, 3vw, 15px);
+  }
+
+  .right-sec p {
+    font-size: clamp(2rem, 6vw, 6rem);
+  }
+
+  .pop-up-container {
+    inset: 50px;
+    width: 90%;
+  }
+
+  .add-new-movie-btn {
+    bottom: 20px;
+    right: 20px;
+    height: 60px;
+    width: 60px;
+  }
+}
+
+/* Extra Small Devices (e.g., iPhone SE) */
+@media (max-width: 480px) {
+  .edit-form {
+    padding: 10px;
+  }
+
+  .edit-form h2 {
+    font-size: 1.2rem;
+  }
+
+  .pop-up-btn-container {
+    flex-direction: column;
+  }
+
+  .pop-up-btn-container button {
+    width: 100%;
+  }
+
+  .add-new-movie-btn {
+    height: 50px;
+    width: 50px;
+  }
+}

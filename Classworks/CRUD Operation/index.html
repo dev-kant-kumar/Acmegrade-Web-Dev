@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Operation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="cards-overview-conatiner">
+      <button class="total-cards-btn">
+        Total Cards <span class="total-cards"></span>
+      </button>
+      <button class="added-cards-btn">
+        New Cards <span class="added-cards"></span>
+      </button>
+      <button class="deleted-cards-btn">
+        Deleted Cards <span class="deleted-cards"></span>
+      </button>
+    </nav>
+    <div class="container"></div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="pop-up-container">
+      <section class="close-btn-container">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="34"
+          height="34"
+          viewBox="0 0 24 24"
+        >
+          <g fill="none">
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              fill="currentColor"
+              fill-opacity="0.25"
+            />
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="1.2"
+              d="m9 9l6 6m0-6l-6 6"
+            />
+          </g>
+        </svg>
+      </section>
+      <form class="edit-form" novalidate>
+        <h2 class="form-title">Edit Movie</h2>
+        <section class="form-body">
+          <div class="input-field">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 48 48"
+              >
+                <defs>
+                  <mask id="ipSMovie0">
+                    <g fill="none" stroke-width="4">
+                      <path
+                        fill="#fff"
+                        stroke="#fff"
+                        stroke-linejoin="round"
+                        d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4S4 12.954 4 24s8.954 20 20 20Z"
+                      />
+                      <path
+                        fill="#000"
+                        stroke="#000"
+                        stroke-linejoin="round"
+                        d="M24 18a3 3 0 1 0 0-6a3 3 0 0 0 0 6Zm0 18a3 3 0 1 0 0-6a3 3 0 0 0 0 6Zm-9-9a3 3 0 1 0 0-6a3 3 0 0 0 0 6Zm18 0a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z"
+                      />
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        d="M24 44h20"
+                      />
+                    </g>
+                  </mask>
+                </defs>
+                <path
+                  fill="currentColor"
+                  d="M0 0h48v48H0z"
+                  mask="url(#ipSMovie0)"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Name of movie"
+              class="edit-movie-name"
+            />
+          </div>
+          <div class="input-field">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16 16a7 7 0 1 0 0-14a7 7 0 0 0 0 14m-8.5 2A3.5 3.5 0 0 0 4 21.5v.5c0 2.393 1.523 4.417 3.685 5.793C9.859 29.177 12.802 30 16 30s6.14-.823 8.315-2.207C26.477 26.417 28 24.393 28 22v-.5a3.5 3.5 0 0 0-3.5-3.5z"
+                />
+              </svg>
+            </div>
+            <input type="text" placeholder="Lead Role" class="edit-lead-role" />
+          </div>
+
+          <div class="input-field">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M7 15h2c0 1.08 1.37 2 3 2s3-.92 3-2c0-1.1-1.04-1.5-3.24-2.03C9.64 12.44 7 11.78 7 9c0-1.79 1.47-3.31 3.5-3.82V3h3v2.18C15.53 5.69 17 7.21 17 9h-2c0-1.08-1.37-2-3-2s-3 .92-3 2c0 1.1 1.04 1.5 3.24 2.03C14.36 11.56 17 12.22 17 15c0 1.79-1.47 3.31-3.5 3.82V21h-3v-2.18C8.47 18.31 7 16.79 7 15"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Total Collections"
+              class="edit-total-collections"
+            />
+          </div>
+        </section>
+        <section>
+          <p class="edit-from-error" role="alert" aria-live="assertive">
+            Error :
+          </p>
+        </section>
+        <div class="pop-up-btn-container">
+          <button type="submit" class="edit-form-submit">Submit</button>
+          <button class="edit-form-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <button class="add-new-movie-btn" aria-label="Add New Movie">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-dasharray="16"
+          stroke-dashoffset="16"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        >
+          <path d="M5 12h14">
+            <animate
+              fill="freeze"
+              attributeName="stroke-dashoffset"
+              dur="0.4s"
+              values="16;0"
+            />
+          </path>
+          <path d="M12 5v14">
+            <animate
+              fill="freeze"
+              attributeName="stroke-dashoffset"
+              begin="0.4s"
+              dur="0.4s"
+              values="16;0"
+            />
+          </path>
+        </g>
+      </svg>
+    </button>
+  </body>
+
+  <script src="./script.js"></script>
+</html>
