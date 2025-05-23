@@ -189,6 +189,7 @@ const editCard = (idx) => {
   editMovieIdx = idx;
   overlay.classList.add("active");
   popUp.style.display = "block";
+  formTitle.textContent = "Edit Movie";
   // set previous data of card in form
   editMovieName.value = superHeroMovies[idx].name;
   editLeadRole.value = superHeroMovies[idx].lead;
